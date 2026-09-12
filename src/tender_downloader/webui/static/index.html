@@ -1,0 +1,837 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="__CSRF_TOKEN__">
+    <meta name="color-scheme" content="light">
+    <title>标书采集平台 · NSFOCUS 吉林代表处</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body class="is-loading">
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="NSFOCUS 吉林代表处 · 标书采集平台">
+          <img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPgAAAAkCAYAAACkLfdfAAAQgklEQVR42u1cCVQUV9YuccOgUXF0xrhnNMYl4ppxXxKjCOK4BHcxYoyoUUFlUUxEovCLigoq0bigASXughsIIovs+77v+07T0ECD839vhtKWobvopsqRnPrOued01/K6+lV9791373eLkoXC8rKPngT6TrW8cVVvg+XPZ+bu+eHB2M0rA4esXZzUZeHUTGJ9l89PxbawL7frPFthZnjx4JXz++54uX+TV1L8McWDB48PC+HJCUNAUoPxP6xx/0hjRhVI/C8p9lrqPhjOFX5juN3ptpf7TL5XefD4H6KiStDF5r7TmnFbVnuCnI2EoEw2eI1mEAYBr9Ycixnewz00cDzf0zx4vGcc/+P6+v7aC9MIEVtr3TVnFW88ZnYyPCVxuMlvtoZ2znd0rj5zXgKb32QasDVm1y7u0jtteXyOwQ8P/vbtgvjVRw6cIG4/3+s8eLwnKC+aXslM6Jlli0x2Oh1zurbJPzbqU6oZ6hpESlV1ZT3TysOHpZaFjYdNb7IxsOHlogLVWnF1x7T8XFW3kIBRfK/z4PGesMfO2lQKsRsQOHO59OTBssLy0ndm3dTysJGJpQFT6O9Wftp3d7mOqYcJTgasfvQ05dzu4FyXaSYe05Kw7V+whj3PJ5SaeS0I/TV02/XHyTbbcwWJA6n3ALfUi0soFhGWnDDY2c9rAm3xmel9qVaipra2A85RI+c1t5Ck+P/qj4KyUhXXYP9xZD8bFpue2o9qASGJcUNZaF+tXizuQElAVFfXISAuenhb2vWOCh8tqBZ2omSguKK8+/PQQNb6Kb+05CP8ppK0/REpSX+lmEGuS1laGwlZGapUM2QVFfRx8fcez9b/yCjI60FV1VR3Gr1J208iOFa99qipbVBC7DCqCeLGuo7h+a5zrkTsObvPfXIWIa1TrJkVvR9kHRJZ6D6rRlzVmd5mG6zrSI6TYWLboE32JdXZqhSHOB24wc0365ZWc4+DkhOV1cIu8w233WkhuCje+H+HLGrr6ztQDMguKuyK42taGlDXW/5kQx+HB0xllbnJWWwXkX1smfFFG2NKAjc8nn01aLVGLEvt16KP3kwEZx/cWoYMSwobbfdYPLt036+nDTGAvHPfSgUV3b89bGRHfpvNfnLx95kWl5mmIm3/ttOWplQr8CI8eJy0Nsyv/6ZLHxeTnjpgtv6WB3T8iy3D5LyQIvCJChuLDSItU/3L0WnJg950YE1u77vxlsYHXsxKbiLla3xOsI/cdzau2HciJQVPU+y2kGPJOUxm6jk7MaUsZKRQVKOEEV8q8R4H+o6hFMAhr/n+Rh5Ts2OLvCdiNtc7E6hzB9e3Qe527C/skJVRWGFmdJoNgleLREqT9NY9o7dzRXCQe15X9Wn0AMIqwa1vO2gTD5Dt619vcdCaagKel45Tf/zuOb2vvRI8syC/98BVi5Lo7ZwQnAABs/7050Jhxl+uRxlb7Xb9QgASNh73X3n/Rbq9bkZF1GCKAfUNtR38c+4tiinymlIgTBsM6yESVynR+8h32MDYIq/J/jl3lzsnnTK6GrHXOrM8rj+WC9vUTXbeNDhvbU6Cd3ggf9YyNbiOAF36gcvndlJyoFCY3tc784b23ueTCiUHlFOB6+9TCkD3uPkV0mlMJCczeVsIfu7hLW3ynWuCY+aOJtvYJniZoLJL73/Oy+HoPzS4wxVvGkTWkG3tneDfn/jFknznnOAEIrGw08PEkwYgRakkKTAD5v4Ra26WX5XSn5ITqXk53bHeGAwb+cjfRy0mPeVzfB4G603WaFQz4CHcJemqYMlQgrz8jsbGRhzLjMraEpWzwZsv4LrrmnsL+1/MSC+ryVNVkOD2rejU19+aGZ1oC8GXHDSw55rgoUlxQ8i1ckFw1yD/L8l3rszwwhlTCoC36fBnIDgG2sj3RnDM0mtludP6buPKPdOvaVIy8DwkYDRJiw1c9e+1nZDhIur6QQk3becmVxDI2ubezQ1hSfFDEWmfhCCBhluI/+Ry5OgpCSBarxxR8HzuhdAdFxNLAkZSUhBZ8HzG6UAdJxLgezNQuX+ZC4L35pDgNMktFSX45G0bHkpre9i6JZFzDLbcUNTOP7ytRQEuft7jpf3GCJ2lEQq2fx1uc5cLLnc1ZYifBDjuNlNbcFlTpbWx1+7UKQqYb7j9sfR+0opoSz/5RkeMeF8E77lkTqa05+iL71d5teV/OPt5j6MkUSeu6Yw1cWpzYhu6Tyl0ij1sWlyd3Y9iAIl4jtiwNEjRUUdZfVq1g/uT2YjCz7kY9qO9Y/TB08QQfb/2i4+mr76bWgW5JqylGV3t6vqKLjhWAGvc5z4ln5x3IWz7OU4JTpP8sLEFmwRHoKmksAzZjDaCieAnbzt8R7UBsghucePKJqoViEpLHkjccUUI3mvJ3KIKYZUy1Ub8rwk+cuNy3wbitbINj7Srm2liG7iNL4Nrvh9EUaH3hybFD9tla3XEKzJ0Mr3trrfHTIx6Y+nvTwNfTSbRZUVJ3lNrTrlHWNC4S+G7rVrwJBrOBX9vj5lcRUpqopsEwVVwfO3lcH1r5OGVgvNcFsB9d0CA8AtuCU6T3MiCLYJ3WzSj2i82cmR7JvjNF64LKGaQzI4ycfkVIfjn361IpoD2TnDEnRKziwp6U2xDUFeqDFc2yy5k62UE297k+zwjQiZ+vU/vD+JWkwt4EvhqGgV4R4V9DiFMBbY1onMDjjpc1kM+r9eqX/bbtmX98MlK9Yzo9MQBSMcdwkzuCPvtUbLNHohpPm8pv+zo/nT+JL31T4h79XY9Xqx61GexF2ILnWWlyRDFH8U2wWmSax82PionwR/I8G5qoToslsfg1kdvPWVhjuKf7q0hOAKduxAf6aaI8QRnj+DEVDRmCuW830WY+QOPOFzeXltX15GShryq5DeuuF9s1Gdf7dW73TwoA4KPyyku6jF0nVZMCxdXA7I9lpEqqe39z7nkglJg4bCwJouCZUAKW048AGjdfRC46Uo1A1JJHSHa6P+Hp5um7vHDJ//WJLVdZ3HwFCWBouqsjxFN/4RigJHHPwLKRPm9aPJDefdRawnedeHU+pm7N98n/cNA8lYRfPNxc1suAi5D1iyOyCrMV5UkOBdBNp7g8hEcdRo+XNzvKdt17mHiky4QKqms6IYQvgWkrKKWHtrYjNS/LzDacZNpBoPYIR3H3fjpqp0hcq+LAuNjRsCN7kFmXVnreOQHVX2iw9WSsjP7RqYmDRi0SiME5I+AJcOFL20uCpit//09IkahFADc+OoT/qudsT6/dvDl3GAIdz5pLcExylaQ/6K5f7eNrH5YaW58NC0vl5HgjwN8p9L/jW1baW7yK0/wD4vgh+x/1eMqim565fxWShqQhvhNVj5y+aF9VuTBbalMFKocZxSxbIEEckiLks36yq7wEj6BazwJufCFsBWw1U22EqYRX/xqGtG202vtE7d+39DS7/VZ+lUeBo8d4oYGmeo0kPadFF900cvxDtGm1qaec6Leru/HioNzHy2gAHkI/h9ZJkh+ACSXMZM3ud8NTEq2H6yPHKbbYdkEZQJBR57gHw7Bq2tFHeEh3+eC4PAOfKUHSx7dW8FQC94g+X20rrafldO1zekF76ahqusru0QVvpgBQYsh1vU3QagYpNsErVW6wUQ/v/w6pqAqo9/GY4eO46LdQKQ76ORj9q4umkUVZTIjpgiudXqcbKsHRZvXu4OMoItPltPKo75aPvRv7XGbUFhak9dTfoLTsQBRB439u2yYOp6J4ASo0Fs2YetaT+wrhBXLYVWyfgfa+T48wT8YgtNLzk77L53dOUJnWbBc9xrGIGfOkiWUV8FauILhptYvNP7R8WnQq3dkq1Cq9X+WYrfVOmDdIxBHSMjTVoO2/SYlB7CO7vUk+dw2kxfTk8n5zkmnDSkaza6V7McAEGXgplYGvf0ZRQneNJOD5PRMLifBWQCUZJ0h4XSRQfC/yCI40kz5JB6igAVgaaXME1wOgrMAFJT0GrBSPVHK72RTsgDByl0pJzbibS03vSLDRr2NTNd09sp0WHHCf9UTWkXGsr32z76rLqgt6Z5UGqhWjADaW3msiEhg+0IeOx2z9S7rgLXO8BKqJBRsicgOqEgh+IifXs6LR5CtJ6Lu3SH2WQ0xTHcFCS45k9tyQ3BmYK1toyjBkSbbxFWa7NQdRx2qFUjOyRqgaB4cS7YiTE5duST4sp/32VHMIHr/BVwTnACCGG+FCI51r25z1/wznWWBkJz+gz6GuLTOidaGqDLLJmTi0kDUBGFdebfD3gv9mrbVwaphYmnn4LoKk0uDpRaqoAhlRGKJv5T9ChGcTt3RJH8tD8GRptq7/JDhDUVt3t6tzmhPzEBwLvPgGtKrwmZVQop7i+k/4J1/bVKyfbpuSXgL7TrBGH+bGCopZSrZYA1YNz+S1QYGASd4Q8VMBMdLUGzbcr9R0u1J2lOI4KGJcYPfCi2mC1Gypy+sqenUJBntBt26EdzaEkKk92UPEk7oR0CGis+NTMeaeX0Tml4e+RklB9gieFMARWmRya6zDORmELqwamLUmCtzSXD3kMDJXGrRUYRkSgEYPB251KKXCio70csELuzqU+flknlwLgwp7GiKCX2WfZU6fMPS4FcxEZ9RQENjfQfvTEdtY4+pmWy53kQxZ+G75NWVCINL9xOs9r/M+H1dVKHH19GFnhPgQg+HDWqyoTmChCFNL5l4IK1NrLtTn6ac/5EUz1DA+yK4jJncjmkmB8HPcE1wjPauXCvZsH7ujNRoGofVZGpN1WTrSJ9yRXAKQH85c9E+BEtVKMLqwzXBN1mZHaOYcA6F+8iJK/8n1ZQ04KT/ahc6Aq6o4e0uhedDtjq4p13ekloWOopWmsmDyAL3iU06cyHay7J8tdTzRsxPVmH5z+YhHiAHsbklOJ0KwSuvLsu6GUcdr2zkkuDQM1ShEEiNa4IToIppMb1MYNPgkp6RqAfvNHbzqpdcEtwvJnK0svr0Cpbbf33g0lkDCuCS4Ah6pkJL0odqLTCrau95PrFU0VkaarGsa1HGJzEzT0dduBLVDsASwemZXAna9DMtPPiNiw/s/h2BuU4cEbxxjK52IJSHk9jTojPjutsjdVSFxbExy36sNacYpa4morp3nxsiv4Ve4wKWjzVcEJyAvA0Y/efHgvjotSrq5C0cr+hSAIcEF6M60yUxO3MA1Rpgdu2CYg0bes0rp4nxyqT7QbkP1UXkdU7tGEk5WYNfxUROaG6Q8o6j5EB0WspAyfNROTWUkkBESuKnZDtbhvLbIc3flVYKlaK04yE/VqVYQm19nVJQfMzf2/gfxlQKhV2ZUkU4To2tPsP6W4WSAOm/6PSUwW1pE8/JqKqamv/igH9c1Bg27zeI/VdKHuRUxg+S1yXXd/1CiHzyuYzyyE/511ry4PEBA7LSzqjBFrSS3PUo8bTDWn0g33M8eLQTIGKexLTGRpDrWXJpEP/Ocx482hvw0kUvaeTG+9uKPNKvrhUjfcb3FA8e7RAnA9bca2nWxhtKHxZUpfbje4gHj3YMBMzsm5G7DvLU3eLGOn7W5sGjvcMh+sB5CW13PsQks/he4cHjT0ZwFHvEQSo6jO8RHjz+ZAQ/4qMZUCEq7MP3Bg8efzK4pl7YCHL35HuCB4/2hf8HS5Sb+kLjwkoAAAAASUVORK5CYII=" width="248" height="36" alt="NSFOCUS">
+          <span class="brand-copy">
+            <strong>标书采集平台</strong>
+            <small>吉林代表处</small>
+          </span>
+        </div>
+
+        <div class="topbar-actions">
+          <div class="compact-status" id="compact-status" aria-live="polite">
+            <span class="status-dot is-idle" id="header-status-dot" aria-hidden="true"></span>
+            <span id="header-status-text">正在连接本地服务</span>
+          </div>
+          <button class="button button-quiet desktop-action" type="button" data-action="validate">
+            校验配置
+          </button>
+          <button class="button button-primary" type="button" data-action="save">
+            <span class="button-label">保存配置</span>
+            <span class="button-spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="sidebar" aria-label="配置导航">
+          <nav class="section-nav">
+            <p class="nav-label">工作导航</p>
+            <a href="#query-conditions" class="nav-item is-active">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+              <span>项目查询</span>
+            </a>
+            <a href="#query-progress" class="nav-item" id="query-progress-nav" hidden>
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg>
+              <span>采集进度</span>
+            </a>
+            <a href="#catalog-results" class="nav-item">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+              <span>查询结果</span>
+            </a>
+            <p class="nav-label nav-group-label">平台设置</p>
+            <a href="#basic-settings" class="nav-item">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5" fill="white"/><circle cx="15" cy="17" r="2.5" fill="white"/></svg>
+              <span>基本设置</span>
+            </a>
+            <a href="#http-settings" class="nav-item">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+              <span>网络请求</span>
+            </a>
+            <a href="#source-settings" class="nav-item">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg>
+              <span>数据来源</span>
+            </a>
+            <a href="#ai-settings" class="nav-item">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></svg>
+              <span>AI 分类</span>
+            </a>
+            <a href="#advanced-settings" class="nav-item">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16"/></svg>
+              <span>高级 JSON</span>
+            </a>
+            <a href="#run-center" class="nav-item">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></svg>
+              <span>运行中心</span>
+            </a>
+          </nav>
+
+          <div class="sidebar-note">
+            <span class="note-kicker">LOCAL ONLY</span>
+            <strong>吉林代表处工作空间</strong>
+            <p>本机保存配置与采集结果<br>AI Key 支持钥匙串安全存储</p>
+          </div>
+        </aside>
+
+        <main class="main-content" id="main-content">
+          <section class="hero" aria-labelledby="page-title">
+            <div>
+              <p class="eyebrow"><span class="department-dot" aria-hidden="true"></span>NSFOCUS 吉林代表处</p>
+              <h1 id="page-title">标书采集平台</h1>
+              <p class="hero-copy">汇集项目线索，让每一次查询更高效。</p>
+              <div class="beginner-actions">
+                <button hidden class="button button-secondary" type="button" id="quick-sample">先试采10条</button>
+                <a class="button button-primary" href="#query-conditions">开始查询 <span aria-hidden="true">↗</span></a>
+                <a class="button button-secondary" href="#catalog-results">查看结果 <span aria-hidden="true">→</span></a>
+              </div>
+              <p id="beginner-progress" class="field-hint" role="status">填写需求 <span aria-hidden="true">→</span> 查询平台 <span aria-hidden="true">→</span> 复核与导出</p>
+            </div>
+            <div class="hero-summary" aria-label="配置概览">
+              <div class="summary-cell">
+                <span>采集区间</span>
+                <strong id="summary-date">—</strong>
+              </div>
+              <div class="summary-cell">
+                <span>已启用来源</span>
+                <strong id="summary-sources">—</strong>
+              </div>
+              <div class="summary-cell">
+                <span>AI 分类</span>
+                <strong id="summary-ai">—</strong>
+              </div>
+            </div>
+          </section>
+
+          <div class="notice notice-info" id="page-notice" hidden role="status">
+            <span class="notice-mark" aria-hidden="true">i</span>
+            <div>
+              <strong id="page-notice-title">提示</strong>
+              <p id="page-notice-message"></p>
+            </div>
+            <button type="button" class="notice-close" aria-label="关闭提示" id="notice-close">×</button>
+          </div>
+
+          <section class="catalog-card" id="notice-catalog" aria-labelledby="catalog-title">
+            <section class="query-panel" id="query-conditions" aria-labelledby="catalog-title">
+            <header class="catalog-header">
+              <span class="section-icon" aria-hidden="true">01</span>
+              <div>
+                <h2 id="catalog-title">查询条件</h2>
+                <p>填写客户需求，从各平台获取项目公告与文件线索。</p>
+              </div>
+
+            </header>
+
+
+
+
+            <div class="catalog-toolbar query-filter-grid" aria-label="本次平台查询条件">
+              <fieldset class="region-selector" aria-describedby="catalog-region-hint">
+                <legend>项目地区</legend>
+                <div class="region-selector-grid">
+                  <div class="field">
+                    <label for="catalog-province-filter">全国 / 省份</label>
+                    <select id="catalog-province-filter"><option value="">全国</option></select>
+                  </div>
+                  <div class="field">
+                    <label for="catalog-city-filter">城市 / 州 / 盟</label>
+                    <select id="catalog-city-filter" disabled><option value="">全部城市</option></select>
+                  </div>
+                  <div class="field">
+                    <label for="catalog-district-filter">区 / 县</label>
+                    <select id="catalog-district-filter" disabled><option value="">全部区县</option></select>
+                  </div>
+                </div>
+                <p id="catalog-region-hint" aria-live="polite">地区选项正在加载…</p>
+              </fieldset>
+                <div class="field">
+                  <label for="start-date">开始日期 <span class="required" aria-hidden="true">*</span></label>
+                  <input type="date" id="start-date" name="start_date" aria-describedby="date-range-help" required>
+                </div>
+                <div class="field">
+                  <label for="end-date">结束日期 <span class="required" aria-hidden="true">*</span></label>
+                  <input type="date" id="end-date" name="end_date" aria-describedby="date-range-help" required>
+                </div>
+
+              <div class="catalog-search field">
+                <label for="catalog-search">项目关键词（可选）</label>
+                <input type="search" id="catalog-search" autocomplete="off" placeholder="项目名称、采购单位或关键词">
+              </div>
+              <div class="field">
+                <label for="catalog-type-filter">公告类别</label>
+                <select id="catalog-type-filter"><option value="">全部类别</option></select>
+              </div>
+              <div class="field">
+                <label for="catalog-industry-filter">行业</label>
+                <select id="catalog-industry-filter"><option value="">全部行业</option></select>
+              </div>
+              <div class="field">
+                <label for="catalog-ai-filter">安全相关性（结果过滤）</label>
+                <select id="catalog-ai-filter">
+                  <option value="relevant_pending">相关 + 待复核</option>
+                  <option value="relevant">已确认相关</option>
+                  <option value="review">待复核</option>
+                  <option value="excluded">已排除</option>
+                  <option value="all" selected>全部查询结果</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="catalog-download-filter">文件状态</label>
+                <select id="catalog-download-filter">
+                  <option value="">全部状态</option>
+                  <option value="not_downloaded">未下载</option>
+                  <option value="queued">等待下载</option>
+                  <option value="downloading">下载中</option>
+                  <option value="downloaded">已下载</option>
+                  <option value="partial">部分已下载</option>
+                  <option value="failed">下载失败</option>
+                  <option value="unavailable">暂无原文件</option>
+                </select>
+              </div>
+              <div class="filter-footer">
+                <p id="date-range-help">包含起止当天的公告；城市、行业由规则提取，请结合原公告复核。</p>
+                <button class="text-button catalog-reset" type="button" id="catalog-reset">清空条件</button>
+              </div>
+            </div>
+
+            <div class="catalog-toolbar query-mode-toolbar" aria-label="查询与防漏检测模式">
+              <div class="field">
+                <label for="query-mode">查询模式</label>
+                <select id="query-mode">
+                  <option value="standard">常规关键词查询</option>
+                  <option value="ai_recall">AI 防漏检测（扩大检索）</option>
+                </select>
+              </div>
+              <div class="field" id="query-limit-field" hidden>
+                <label for="query-limit">每来源补漏及 AI 复核上限</label>
+                <input id="query-limit" type="number" min="10" max="500" step="10" value="100">
+              </div>
+              <div class="field" id="query-review-field" hidden>
+                <label for="query-review-filter">AI 需求复核结果</label>
+                <select id="query-review-filter">
+                  <option value="keep">匹配 + 待复核</option>
+                  <option value="all">全部候选（含 AI 不匹配）</option>
+                  <option value="match">AI 判断匹配</option>
+                  <option value="suspect">待人工复核（含失败）</option>
+                  <option value="no_match">AI 判断不匹配</option>
+                </select>
+              </div>
+              <div class="query-submit">
+                <button type="button" class="button button-primary" id="query-platforms"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>查询各平台</button>
+              </div>
+            </div>
+            <details id="query-mode-help" class="query-help" hidden>
+              <summary>AI 防漏会调用模型，可能产生费用 <span>查看范围与限制</span></summary>
+              <p>
+              先保留常规检索的候选，再按日期额外广搜，不用行业或项目词限制补漏列表；把公告文本发送给所配置的 AI 按客户条件复核。
+              每来源默认最多额外广搜 100 条、最多 AI 复核 100 条，两项额度分别计算；常规候选不会因额度用完而删除，未复核项保留待人工处理。
+              每条最多一次模型请求，可能产生模型费用；达到上限会标记不完整，建议缩短日期分段查。
+              不确定、正文缺失和模型失败的条目保留待复核；AI 不匹配项可切换“全部候选”查看。
+              附件原文未交给 AI，不能据此保证文件内容或链接完整。
+              <a href="#ai-settings">先在 AI 分类中打开开关，配置并测试接口 →</a>
+              </p>
+            </details>
+            </section>
+            <p id="query-launch-status" class="catalog-filter-help" role="alert" hidden></p>
+            <details class="query-context">
+              <summary>本次查询条件与平台覆盖说明</summary>
+              <p id="query-summary" class="catalog-filter-help" role="status">尚未发起平台查询。历史试采记录不会充当本次结果。</p>
+            </details>
+            <section id="query-progress" class="collection-progress" aria-labelledby="query-progress-heading" hidden>
+              <header class="collection-progress-header">
+                <div>
+                  <h3 id="query-progress-heading"><span class="section-icon" aria-hidden="true">02</span>采集进度</h3>
+                  <p id="query-progress-current" aria-live="polite">正在准备查询…</p>
+                </div>
+                <span id="query-progress-state" class="progress-state">准备中</span>
+              </header>
+              <div class="collection-progress-timing">
+                <span id="query-progress-elapsed">已用时 0秒</span>
+                <span id="query-progress-updated">等待第一条进度</span>
+              </div>
+              <div class="collection-progress-track">
+                <progress id="query-progress-bar" max="1" value="0" aria-label="来源处理进度"></progress>
+                <span id="query-progress-count">已处理 0 / 0 个来源</span>
+              </div>
+              <div class="collection-progress-metrics">
+                <div><strong id="query-progress-notices">0</strong><span>检索到的公告</span></div>
+                <div><strong id="query-progress-details">0</strong><span>已读取正文</span></div>
+                <div><strong id="query-progress-matches">0</strong><span id="query-progress-matches-label">当前显示</span></div>
+                <div><strong id="query-progress-links">0</strong><span>发现附件链接</span></div>
+              </div>
+              <p id="query-progress-review" class="catalog-filter-help" role="status" hidden></p>
+              <p id="query-progress-wait" class="collection-progress-wait" role="status" hidden></p>
+              <div id="query-sources" class="collection-progress-sources"></div>
+              <footer class="collection-progress-footer">
+                <span>进度约每6秒刷新，计时持续更新。来源处理进度不代表公告覆盖率。</span>
+                <a href="#run-center">查看运行日志 →</a>
+              </footer>
+            </section>
+            <section class="results-panel" id="catalog-results" aria-labelledby="results-title">
+              <header class="results-header">
+                <div class="results-heading">
+                  <span class="section-icon" aria-hidden="true">03</span>
+                  <div><h2 id="results-title">查询结果</h2><p>查看项目、复核信息，导出文件下载地址。</p></div>
+                </div>
+              <div class="catalog-header-actions">
+                <button class="button button-secondary button-small" type="button" id="catalog-export">
+                  <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v4h16v-4"/></svg>导出表格（含下载URL）
+                </button>
+                <button class="button button-secondary button-small" type="button" id="catalog-refresh">
+                  <svg class="button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 7a7 7 0 0 1 12-1l2 6M4 12l2 6a7 7 0 0 0 12-1"/></svg>刷新清单
+                </button>
+              </div>
+              </header>
+            <p id="catalog-export-scope" class="catalog-filter-help">查询取得结果后可导出 CSV 表格，包含项目信息及文件下载 URL。</p>
+            <p id="catalog-export-status" class="catalog-filter-help" role="status" hidden></p>
+            <p id="query-review-summary" class="catalog-filter-help" role="status" hidden></p>
+            <details class="catalog-policy">
+              <summary>源文件按需下载 <span>· 可边采集边导出</span></summary>
+              <p>查询会访问源站的列表和公告正文，提取信息及附件链接；本轮已显示的结果可以边采边下载，点击“下载原文件”或“下载所选”保存；下载状态会随清单刷新。</p>
+            </details>
+            <div class="catalog-summary-bar">
+              <div class="catalog-list-summary">
+                <p id="catalog-summary" aria-live="polite">正在读取标讯信息…</p>
+                <div class="catalog-page-size-control">
+                  <label for="catalog-page-size">每页显示</label>
+                  <select id="catalog-page-size" aria-controls="catalog-body">
+                    <option value="10">10 条</option>
+                    <option value="20" selected>20 条</option>
+                    <option value="50">50 条</option>
+                    <option value="100">100 条</option>
+                  </select>
+                </div>
+              </div>
+              <div class="catalog-batch-actions">
+                <span id="catalog-selection-count">已选 0 条</span>
+                <button class="button button-secondary button-small" type="button" id="catalog-select-filtered">选择全部筛选结果</button>
+                <button class="button button-primary button-small" type="button" id="catalog-download-selected" disabled>
+                  <span class="button-label">下载所选原文件</span>
+                  <span class="button-spinner" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="catalog-state" id="catalog-state" role="status" aria-live="polite">
+              <span class="catalog-state-mark" aria-hidden="true">…</span>
+              <div>
+                <strong>正在读取标讯清单</strong>
+                <p>只读取信息，不会下载源文件。</p>
+              </div>
+            </div>
+
+            <div class="catalog-table-wrap" id="catalog-table-wrap" hidden>
+              <table class="catalog-table">
+                <caption class="sr-only">标讯、结果与合同信息列表</caption>
+                <thead>
+                  <tr>
+                    <th class="catalog-check-cell" scope="col">
+                      <input type="checkbox" id="catalog-select-all" aria-label="选择本页全部标讯">
+                    </th>
+                    <th scope="col">公告时间<span class="table-heading-sub">公告类别</span></th>
+                    <th scope="col">项目标题</th>
+                    <th scope="col">采购单位 / 城市</th>
+                    <th scope="col">中标单位</th>
+                    <th scope="col">金额</th>
+                    <th scope="col">行业 / AI 分类</th>
+                    <th scope="col">来源 / 文件状态</th>
+                    <th scope="col"><span class="sr-only">操作</span></th>
+                  </tr>
+                </thead>
+                <tbody id="catalog-body"></tbody>
+              </table>
+            </div>
+
+            <div class="catalog-empty" id="catalog-empty" hidden>
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+              <strong>还没有符合条件的标讯</strong>
+              <p id="catalog-empty-message">先设置日期和来源并查询各平台，信息会显示在这里。</p>
+            </div>
+
+            <div class="catalog-pagination" id="catalog-pagination" hidden>
+              <button class="button button-secondary button-small" type="button" id="catalog-prev-page">上一页</button>
+              <span id="catalog-page-label" aria-live="polite">第 1 / 1 页</span>
+              <button class="button button-secondary button-small" type="button" id="catalog-next-page">下一页</button>
+            </div>
+            </section>
+          </section>
+
+          <form id="config-form" novalidate>
+            <section class="config-card" id="basic-settings" aria-labelledby="basic-title">
+              <header class="card-header">
+                <div class="step-badge" aria-hidden="true">01</div>
+                <div>
+                  <p class="card-kicker">范围与存储</p>
+                  <h2 id="basic-title">基本设置</h2>
+                  <p>确定要采集的日期，以及下载文件在本机的保存位置。</p>
+                </div>
+                <span class="card-state" id="basic-state">必填</span>
+              </header>
+
+              <div class="form-grid form-grid-two">
+                <div class="field field-wide">
+                  <label for="output-dir">输出目录 <span class="required" aria-hidden="true">*</span></label>
+                  <div class="input-prefix-wrap">
+                    <span class="input-prefix" aria-hidden="true">目录</span>
+                    <input type="text" id="output-dir" name="output_dir" autocomplete="off" required spellcheck="false">
+                  </div>
+                  <p class="field-help">相对路径以项目目录为起点，也可以填写绝对路径</p>
+                </div>
+                <div class="field field-wide">
+                  <label for="database-path">状态数据库 <span class="required" aria-hidden="true">*</span></label>
+                  <div class="input-prefix-wrap">
+                    <span class="input-prefix" aria-hidden="true">文件</span>
+                    <input type="text" id="database-path" name="database" autocomplete="off" required spellcheck="false">
+                  </div>
+                  <p class="field-help">用于断点续跑和去重，建议放在输出目录中</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="config-card" id="http-settings" aria-labelledby="http-title">
+              <header class="card-header">
+                <div class="step-badge" aria-hidden="true">02</div>
+                <div>
+                  <p class="card-kicker">连接礼仪与保护</p>
+                  <h2 id="http-title">网络请求</h2>
+                  <p>控制访问频率、超时和下载大小，避免给官方站点造成压力。</p>
+                </div>
+                <span class="card-state">建议保守设置</span>
+              </header>
+
+              <fieldset class="field-group">
+                <legend>普通请求</legend>
+                <div class="form-grid form-grid-four">
+                  <div class="field">
+                    <label for="http-timeout">请求超时</label>
+                    <div class="number-unit">
+                      <input type="number" id="http-timeout" min="1" max="600" step="1" inputmode="numeric">
+                      <span>秒</span>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="http-delay">请求间隔</label>
+                    <div class="number-unit">
+                      <input type="number" id="http-delay" min="0" max="3600" step="0.1" inputmode="decimal">
+                      <span>秒</span>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="http-retries">最多重试</label>
+                    <div class="number-unit">
+                      <input type="number" id="http-retries" min="0" max="20" step="1" inputmode="numeric">
+                      <span>次</span>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="http-response-mb">页面上限</label>
+                    <div class="number-unit">
+                      <input type="number" id="http-response-mb" min="1" max="1024" step="1" inputmode="numeric">
+                      <span>MB</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="field-group">
+                <legend>附件下载</legend>
+                <div class="form-grid form-grid-three">
+                  <div class="field">
+                    <label for="http-download-mb">单文件上限</label>
+                    <div class="number-unit">
+                      <input type="number" id="http-download-mb" min="1" max="10240" step="1" inputmode="numeric">
+                      <span>MB</span>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="http-download-timeout">下载超时</label>
+                    <div class="number-unit">
+                      <input type="number" id="http-download-timeout" min="1" max="86400" step="1" inputmode="numeric">
+                      <span>秒</span>
+                    </div>
+                  </div>
+                  <div class="field toggle-field">
+                    <div>
+                      <label for="allow-private-hosts">允许内网地址</label>
+                      <p class="field-help">仅在导入可信内网站点时开启</p>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" id="allow-private-hosts">
+                      <span class="switch-track" aria-hidden="true"></span>
+                      <span class="sr-only">允许访问内网地址</span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="config-card" id="source-settings" aria-labelledby="source-title">
+              <header class="card-header">
+                <div class="step-badge" aria-hidden="true">03</div>
+                <div>
+                  <p class="card-kicker">官方渠道</p>
+                  <h2 id="source-title">数据来源</h2>
+                  <p>按需启用连接器；权威度用于相同公告的来源优先级判断。</p>
+                </div>
+                <span class="card-state" id="source-count">0 个启用</span>
+              </header>
+
+              <div class="source-toolbar">
+                <div>
+                  <strong>采集连接器</strong>
+                  <p>除内置来源外，也可以添加公开网站或需要账号登录的网站。</p>
+                </div>
+                <button class="button button-secondary button-small" type="button" id="add-custom-source">
+                  <span aria-hidden="true">＋</span>
+                  添加其他网站
+                </button>
+              </div>
+
+              <div class="source-list" id="source-list" aria-live="polite"></div>
+              <div class="empty-state" id="source-empty" hidden>
+                <strong>配置中还没有数据源</strong>
+                <p>点击“添加其他网站”创建第一个数据源。</p>
+              </div>
+
+              <div class="source-login-notice" role="note">
+                <span aria-hidden="true">!</span>
+                <p><strong>登录方式：</strong>选择“打开登录窗口”后，你可以在按网站隔离的 Edge/Chrome 窗口中正常输入账号，并亲自完成验证码、短信或扫码；状态通过后自动继续，无需再点确认。普通退出保留登录配置，明确点击清除才删除；工具不会保存密码或自动提交验证码。</p>
+              </div>
+
+              <fieldset class="recall-fieldset">
+                <legend>召回策略</legend>
+                <p class="legend-help">控制信息发现和正文解析深度；所有模式都只建立清单，原文件由用户确认后下载。</p>
+                <div class="choice-grid">
+                  <label class="choice-card">
+                    <input type="radio" name="recall-mode" value="p0_complete">
+                    <span class="choice-indicator" aria-hidden="true"></span>
+                    <span class="choice-copy">
+                      <strong>核心来源深度解析</strong>
+                      <small>推荐 · 完整读取核心来源正文和文件索引</small>
+                    </span>
+                    <span class="choice-tag">推荐</span>
+                  </label>
+                  <label class="choice-card">
+                    <input type="radio" name="recall-mode" value="fast">
+                    <span class="choice-indicator" aria-hidden="true"></span>
+                    <span class="choice-copy">
+                      <strong>快速发现</strong>
+                      <small>优先标题与摘要，适合先快速建立信息清单</small>
+                    </span>
+                  </label>
+                  <label class="choice-card">
+                    <input type="radio" name="recall-mode" value="complete">
+                    <span class="choice-indicator" aria-hidden="true"></span>
+                    <span class="choice-copy">
+                      <strong>全来源深度解析</strong>
+                      <small>完整读取所有来源正文和文件索引，不下载原文件</small>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
+            </section>
+
+            <section class="config-card" id="ai-settings" aria-labelledby="ai-title">
+              <header class="card-header card-header-with-toggle">
+                <div class="step-badge" aria-hidden="true">04</div>
+                <div>
+                  <p class="card-kicker">智能复核</p>
+                  <h2 id="ai-title">AI 分类</h2>
+                  <p>填写接口与 Key，获取模型列表后选择并测试，再用于标书分类和 AI 防漏检测。</p>
+                </div>
+                <label class="master-toggle" for="ai-enabled">
+                  <span id="ai-toggle-label">已关闭</span>
+                  <span class="switch">
+                    <input type="checkbox" id="ai-enabled">
+                    <span class="switch-track" aria-hidden="true"></span>
+                  </span>
+                </label>
+              </header>
+
+              <div id="ai-settings-body" class="ai-settings-body">
+                <fieldset class="ai-preset-panel">
+                  <legend>模型配置</legend>
+                  <p class="legend-help">选择厂商或填写自定义接口 → 填写并保存 Key → 获取模型列表 → 选择模型并测试连接。</p>
+                  <div class="form-grid form-grid-two">
+                    <div class="field">
+                      <label for="ai-provider-preset"><span class="field-step">1</span> 选择 AI 厂商</label>
+                      <select id="ai-provider-preset">
+                        <option value="custom">自定义接口</option>
+                      </select>
+                    </div>
+                    <div class="field field-wide">
+                      <label for="ai-endpoint">API 接口地址</label>
+                      <input type="url" id="ai-endpoint" autocomplete="url" spellcheck="false" placeholder="https://api.example.com/v1/chat/completions">
+                      <p class="field-help">选择厂商会自动填写；自定义接口请填写完整的聊天请求地址，再输入 Key。</p>
+                    </div>
+                  </div>
+                  <p class="preset-status" id="ai-preset-status" aria-live="polite">正在读取可用厂商…</p>
+                </fieldset>
+
+                <div class="ai-key-test-panel">
+                  <div class="field">
+                    <label for="api-key"><span class="field-step">2</span> API Key</label>
+                    <div class="password-wrap">
+                      <input type="password" id="api-key" autocomplete="off" placeholder="填写 Key，或使用已保存的 Key" aria-describedby="api-key-help ai-key-status">
+                      <button type="button" id="toggle-api-key" aria-label="显示 API 密钥" aria-pressed="false">显示</button>
+                    </div>
+                    <p class="field-help" id="api-key-help">保存到 Mac 钥匙串后，重启也可自动使用；未保存的 Key 仅用于当前页面。输入新 Key 会优先使用新值。</p>
+                    <div class="ai-key-actions">
+                      <button class="button button-primary button-small" type="button" id="ai-save-key"><span class="button-label">保存 Key</span><span class="button-spinner" aria-hidden="true"></span></button>
+                      <button class="button button-secondary button-small" type="button" id="ai-delete-key" hidden><span class="button-label">删除已保存 Key</span><span class="button-spinner" aria-hidden="true"></span></button>
+                    </div>
+                    <p id="ai-key-status" class="connection-status" aria-live="polite">正在检查保存状态…</p>
+                  </div>
+                </div>
+
+                <div class="ai-model-discovery">
+                  <div class="field">
+                    <label for="ai-model-preset"><span class="field-step">3</span> 选择模型</label>
+                    <div class="ai-model-actions">
+                      <select id="ai-model-preset"><option value="custom">手动填写模型（高级接口设置）</option></select>
+                      <button class="button button-secondary" type="button" id="ai-fetch-models"><span class="button-label">获取可用模型</span><span class="button-spinner" aria-hidden="true"></span></button>
+                    </div>
+                    <p id="ai-models-status" class="connection-status" aria-live="polite">填写 Key 后获取当前接口返回的模型列表。</p>
+                    <p class="field-help">按接口返回的全部模型显示；是否支持本工具的文本请求，以测试连接结果为准。接口不提供列表时，可手动填写模型。</p>
+                  </div>
+                  <div class="ai-test-action">
+                    <button class="button button-secondary" type="button" id="ai-test-connection">
+                      <span class="button-label">4&nbsp; 测试连接</span>
+                      <span class="button-spinner" aria-hidden="true"></span>
+                    </button>
+                    <p id="ai-connection-status" class="connection-status" aria-live="polite">尚未测试</p>
+                  </div>
+                </div>
+
+                <details class="ai-advanced-details">
+                  <summary>高级接口设置 <small>使用自定义接口时展开</small></summary>
+                  <div class="form-grid form-grid-two">
+                    <div class="field">
+                      <label for="ai-protocol">接口协议</label>
+                      <select id="ai-protocol">
+                        <option value="openai_compatible">OpenAI 兼容</option>
+                        <option value="anthropic">Anthropic Messages</option>
+                        <option value="gemini">Gemini GenerateContent</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="ai-model">模型名称</label>
+                      <input type="text" id="ai-model" autocomplete="off" spellcheck="false" placeholder="model-name">
+                    </div>
+                    <div class="field">
+                      <label for="ai-key-env">密钥环境变量</label>
+                      <input type="text" id="ai-key-env" autocomplete="off" spellcheck="false" placeholder="TENDER_AI_API_KEY">
+                    </div>
+                  </div>
+                </details>
+
+                <fieldset class="field-group">
+                  <legend>判断阈值</legend>
+                  <div class="form-grid form-grid-three">
+                    <div class="field">
+                      <label for="ai-auto-threshold">自动接收</label>
+                      <div class="number-unit">
+                        <input type="number" id="ai-auto-threshold" min="0" max="1" step="0.01" inputmode="decimal">
+                        <span>0–1</span>
+                      </div>
+                      <p class="field-help">高于此置信度自动交付</p>
+                    </div>
+                    <div class="field">
+                      <label for="ai-review-threshold">二次复核</label>
+                      <div class="number-unit">
+                        <input type="number" id="ai-review-threshold" min="0" max="1" step="0.01" inputmode="decimal">
+                        <span>0–1</span>
+                      </div>
+                      <p class="field-help">高于此值进入待确认</p>
+                    </div>
+                    <div class="field">
+                      <label for="ai-timeout">模型超时</label>
+                      <div class="number-unit">
+                        <input type="number" id="ai-timeout" min="1" step="1" inputmode="numeric">
+                        <span>秒</span>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="inline-option">
+                  <label class="check-option" for="ai-reclassify">
+                    <input type="checkbox" id="ai-reclassify">
+                    <span class="check-box" aria-hidden="true"></span>
+                    <span>
+                      <strong>重新分类已处理文件</strong>
+                      <small>更换模型或提示词后使用；下一次运行会增加 API 消耗</small>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="config-card advanced-card" id="advanced-settings" aria-labelledby="advanced-title">
+              <header class="card-header">
+                <div class="step-badge" aria-hidden="true">05</div>
+                <div>
+                  <p class="card-kicker">完整控制</p>
+                  <h2 id="advanced-title">高级 JSON</h2>
+                  <p>查看或编辑完整配置，包括每个连接器的专属参数。</p>
+                </div>
+                <span class="json-state is-valid" id="json-state"><span aria-hidden="true">●</span> JSON 有效</span>
+              </header>
+
+              <details class="json-details" id="json-details">
+                <summary>
+                  <span>展开完整配置</span>
+                  <small>熟悉 JSON 时使用</small>
+                </summary>
+                <div class="json-toolbar">
+                  <p>表单与 JSON 会互相同步；直接修改后请点击“应用到表单”。</p>
+                  <div>
+                    <button class="text-button" type="button" id="format-json">格式化</button>
+                    <button class="text-button" type="button" id="refresh-json">从表单刷新</button>
+                  </div>
+                </div>
+                <label for="raw-json" class="sr-only">完整配置 JSON</label>
+                <textarea id="raw-json" class="json-editor" spellcheck="false" autocomplete="off" rows="24"></textarea>
+                <div class="json-footer">
+                  <p id="json-message" aria-live="polite">可直接编辑完整 JSON。</p>
+                  <button class="button button-secondary button-small" type="button" id="apply-json">应用到表单</button>
+                </div>
+              </details>
+            </section>
+          </form>
+
+          <section class="run-card" id="run-center" aria-labelledby="run-title">
+            <div class="run-intro">
+              <div class="step-badge step-badge-light" aria-hidden="true">06</div>
+              <div>
+                <p class="card-kicker">RUN CENTER</p>
+                <h2 id="run-title">运行中心</h2>
+                <p>启动前会自动保存当前配置；任务只建立信息清单并完成 AI 分类，源文件由你在清单中按需下载。</p>
+                <a class="text-button" href="#query-progress">查看采集进度、公告数量与最近更新时间 →</a>
+              </div>
+            </div>
+
+            <div class="run-layout">
+              <div class="credential-panel">
+                <strong>启动前检查</strong>
+                <p>AI Key 在“AI 分类”中填写并测试；网站登录状态会自动检查，无需再点“我已登录”。</p>
+
+                <div class="source-credentials" id="source-credentials" hidden>
+                  <div class="source-credentials-heading">
+                    <strong>网站登录凭据</strong>
+                    <span>仅本次运行</span>
+                  </div>
+                  <div id="source-credential-list" class="source-credential-list"></div>
+                  <p>账号密码不会写入 config.json、高级 JSON 或浏览器存储；任务启动成功后立即清空。</p>
+                </div>
+              </div>
+
+              <div class="run-actions" aria-label="运行操作">
+                <button class="button button-run" type="button" data-action="run">
+                  <span class="run-symbol" aria-hidden="true">▶</span>
+                  <span class="button-label">保存并查询各平台信息</span>
+                  <span class="button-spinner" aria-hidden="true"></span>
+                </button>
+                <button class="button button-danger" type="button" data-action="stop" disabled>
+                  <span aria-hidden="true">■</span>
+                  <span class="button-label">停止</span>
+                  <span class="button-spinner" aria-hidden="true"></span>
+                </button>
+                <button class="button button-dark-quiet" type="button" data-action="verify">
+                  下载后校验
+                </button>
+                <button class="button button-dark-quiet" type="button" data-action="open-output">
+                  打开输出目录
+                </button>
+              </div>
+            </div>
+
+            <div class="status-panel">
+              <div class="status-summary">
+                <div class="status-title-row">
+                  <span class="large-status-dot is-idle" id="status-dot" aria-hidden="true"></span>
+                  <div>
+                    <span>当前状态</span>
+                    <strong id="status-title">等待启动</strong>
+                  </div>
+                </div>
+                <dl class="status-meta">
+                  <div>
+                    <dt>任务</dt>
+                    <dd id="status-operation">—</dd>
+                  </div>
+                  <div>
+                    <dt>开始时间</dt>
+                    <dd id="status-started">—</dd>
+                  </div>
+                  <div>
+                    <dt>结束时间</dt>
+                    <dd id="status-finished">—</dd>
+                  </div>
+                  <div>
+                    <dt>退出码</dt>
+                    <dd id="status-exit-code">—</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div class="log-console" aria-label="运行日志">
+                <div class="console-toolbar">
+                  <div>
+                    <span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <strong>实时日志</strong>
+                    <span class="log-count" id="log-count">0 行</span>
+                  </div>
+                  <div class="console-actions">
+                    <label class="auto-scroll-option">
+                      <input type="checkbox" id="auto-scroll" checked>
+                      自动滚动
+                    </label>
+                    <button type="button" id="copy-logs">复制</button>
+                    <button type="button" id="clear-logs">清屏</button>
+                  </div>
+                </div>
+                <div class="console-body" id="log-output" tabindex="0" role="log" aria-live="polite" aria-relevant="additions text">
+                  <div class="console-placeholder" id="console-placeholder">
+                    <span>&gt;_</span>
+                    <p>任务日志会显示在这里</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <footer class="page-footer">
+            <span>标书采集平台 <span class="footer-divider">/</span> NSFOCUS 吉林代表处</span>
+            <span>本地运行 · 配置文件 <code>config.json</code></span>
+          </footer>
+        </main>
+      </div>
+    </div>
+
+    <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+      <div class="loading-mark" aria-hidden="true">N</div>
+      <p>标书采集平台 · 正在加载…</p>
+    </div>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+    <noscript>
+      <div class="noscript-message">此配置页面需要启用 JavaScript。</div>
+    </noscript>
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

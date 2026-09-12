@@ -1,0 +1,2 @@
+f6db31db47089ca85f0fe364342f13a8387ad91bea95569b38b2c09e9c7f7a09  NSFOCUS-TenderCollector-v0.3.0-macOS-universal.zip
+2c0f5da45bf1516f7f100e9cdce513ae55919fbd61ceaacbe3922a91cc6d7f33  NSFOCUS-TenderCollector-v0.3.0-Windows-x64.zip
